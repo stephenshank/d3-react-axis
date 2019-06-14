@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, NavLink } from "react-router-dom";
 import "bootstrap";
-import D3ReactAxis from "d3-react-axis";
+import { scaleLinear } from "d3-scale";
+import { AxisBottom } from "d3-react-axis";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -49,21 +50,35 @@ function NavBar() {
 }
 
 function Home() {
-  return <D3ReactAxis />;
+  return <h1>Home</h1>;
 }
 
 function MWE() {
-  return <h1>Minimal working example</h1>;
+  var width = 400,
+    height = 50,
+    padding = 20;
+  var scale = scaleLinear()
+    .domain([0, 100])
+    .range([padding, width-padding]);
+
+  return (<div>
+    <h1>Minimal working example</h1>
+    <svg width={width} height={height}>
+      <AxisBottom scale={scale} ticks={[5]} transform={`translate(0, ${height-padding})`} />
+    </svg>
+  </div>);
 }
 
-ReactDOM.render(<BrowserRouter>
-  <div>
-    <NavBar />
-    <div style={{ maxWidth: 1140 }} className="container-fluid">
-      <Route exact path="/" component={Home} />
-      <Route path="/mwe" component={MWE} />
+ReactDOM.render(
+  <BrowserRouter>
+    <div>
+      <NavBar />
+      <div style={{ maxWidth: 1140 }} className="container-fluid">
+        <Route exact path="/" component={Home} />
+        <Route path="/mwe" component={MWE} />
+      </div>
     </div>
-  </div>
   </BrowserRouter>,
   document.body.appendChild(document.createElement("div"))
 );
+
