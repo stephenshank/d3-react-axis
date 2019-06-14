@@ -1,0 +1,41 @@
+{
+  "name": "d3-react-axis",
+  "version": "0.0.1",
+  "description": "A React axis component that tries to match D3's axis API",
+  "main": "lib/d3-react-axis.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenshank/d3-react-axis.git"
+  },
+  "keywords": [
+    "React",
+    "D3",
+    "Axis",
+    "Data",
+    "visualization"
+  ],
+  "author": "Stephen D. Shank",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stephenshank/d3-react-axis/issues"
+  },
+  "homepage": "https://github.com/stephenshank/d3-react-axis#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0",
+    "jest": "^24.8.0",
+    "react-test-renderer": "^16.8.6",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  }
+}

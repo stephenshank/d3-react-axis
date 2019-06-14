@@ -1,0 +1,6 @@
+node_modules
+lib
+dist
+tags*
+yalc*
+.yalc
