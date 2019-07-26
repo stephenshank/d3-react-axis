@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, NavLink } from "react-router-dom";
 import "bootstrap";
 import { scaleLinear } from "d3-scale";
-import { AxisBottom } from "d3-react-axis";
+import { AxisTop } from "d3-react-axis";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -56,15 +56,24 @@ function Home() {
 function MWE() {
   var width = 400,
     height = 50,
-    padding = 20;
+    left_padding = 0,
+    right_padding = 3;
   var scale = scaleLinear()
     .domain([0, 100])
-    .range([padding, width-padding]);
+    .range([left_padding, width-right_padding]);
 
   return (<div>
     <h1>Minimal working example</h1>
-    <svg width={width} height={height}>
-      <AxisBottom scale={scale} ticks={[5]} transform={`translate(0, ${height-padding})`} />
+    <svg
+      width={width}
+      height={height}
+      style={{border: "solid", borderWidth: 1, borderColor: "LightGrey"}}
+    >
+      <AxisTop
+        scale={scale}
+        ticks={[5]}
+        transform={`translate(0, ${height-1})`}
+      />
     </svg>
   </div>);
 }
