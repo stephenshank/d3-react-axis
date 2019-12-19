@@ -1,6 +1,6 @@
 {
   "name": "d3-react-axis",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A React axis component that tries to match D3's axis API",
   "main": "lib/d3-react-axis.js",
   "scripts": {

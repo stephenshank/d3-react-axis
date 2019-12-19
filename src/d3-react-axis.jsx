@@ -68,7 +68,7 @@ function Axis(props) {
     fill="none"
     fontSize={10}
     fontFamily="sans-serif"
-    textAnchor="middle"
+    textAnchor={orient === right ? "start" : orient === left ? "end" : "middle"}
   >
     <path className="domain" stroke="currentColor" d={d} />
     {values.map((value, index) => {
