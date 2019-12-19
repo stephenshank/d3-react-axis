@@ -36,5 +36,9 @@
             "always"
         ],
         "react/prop-types": "off"
+    },
+    "globals": {
+      "it": false,
+      "expect": false
     }
 }
