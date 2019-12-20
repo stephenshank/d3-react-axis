@@ -2,7 +2,7 @@ import React from "react";
 import { scaleLinear } from "d3-scale";
 import renderer from "react-test-renderer";
 
-import { AxisTop, AxisRight, AxisBottom, AxisLeft } from "../src/index";
+import { AxisTop, AxisRight, AxisBottom, AxisLeft } from "../lib/index";
 
 
 const width = 500,

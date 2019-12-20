@@ -4,8 +4,8 @@
   "description": "A React axis component that tries to match D3's axis API",
   "main": "lib/d3-react-axis.js",
   "scripts": {
-    "test": "npx jest",
-    "build": "npx babel --out-dir lib src/ && find lib -type f | xargs sed -i '' 's/jsx/js/g'"
+    "test": "yarn build && npx jest",
+    "build": "npx babel --out-dir lib src/"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-convert-jsx-extension-to-js": "^0.0.1",
     "d3-scale": "^3.2.1",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.13.0",
