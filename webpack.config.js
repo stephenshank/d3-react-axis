@@ -1,17 +1,22 @@
-const path = require("path");
+const path = require("path"),
+  HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve("src", "index.js"),
-  mode: "production",
-  externals: {
-    "react": "react"
-  },
+  entry: path.resolve("www", "index.jsx"),
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "D3-React-Axis"
+    })
+  ],
   module: {
     rules: [
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
+        query: {
+          presets: ["@babel/react"]
+        }
       },
       {
         test: /\.css$/,
@@ -19,10 +24,13 @@ module.exports = {
       }
     ]
   },
+  devtool: "inline-source-map",
   output: {
-    path: path.resolve(__dirname, "lib"),
-    library: "d3-react-axis",
-    libraryTarget: "commonjs2",
-    filename: "d3-react-axis.js"
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist")
+  },
+  devServer: {
+    contentBase: path.resolve(__dirname, "dist"),
+    historyApiFallback: true
   }
 };
