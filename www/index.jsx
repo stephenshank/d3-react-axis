@@ -32,7 +32,35 @@ function NavBar() {
 }
 
 function Home() {
-  return <h1>Home</h1>;
+  return (<div>
+    <p>
+      <a href='http://github.com/stephenshank/d3-react-axis'>D3-React-Axis</a> is a 
+      {" "}<a href='https://reactjs.org/'>React</a> component that is designed to match
+      the API and outcome of <a href='https://github.com/d3/d3-axis'>D3 Axis</a>.
+    </p>
+    <p>
+      No more <a href='https://reactjs.org/docs/react-component.html#componentdidmount'>componentDidMount</a> or
+      {" "}<a href='https://reactjs.org/docs/hooks-reference.html#useeffect'>useEffect</a> required to have D3
+      put an axis on the DOM when React components are finished rendering. Instead, simply create an Axis component
+      and render it within a parent component as you normally would.
+    </p>
+    <p>
+      In addition to more concise, readable code when building charts with D3 and React, this additionally facilitates
+      features such as <a href='https://jestjs.io/docs/en/snapshot-testing'>snapshot testing</a> that were either
+      clunky or impossible without a dedicated Axis component.
+    </p>
+    <p>
+      It has been shown thus far to work with <a href='https://github.com/d3/d3-scale#linear-scales'>linear</a>,
+      {" "}<a href='https://github.com/d3/d3-scale#log-scales'>logarithmic</a>, and
+      {" "}<a href='https://github.com/d3/d3-scale#power-scales'>power</a> scales... 
+      see the <b>Examples</b> menu above.
+    </p>
+    <p>
+      Please refer to the <a href='http://github.com/stephenshank/d3-react-axis'>Github page</a> if
+      you wish to use D3-React-Axis in your own code. Thanks for checking this project out... I
+      hope you find it useful!
+    </p>
+  </div>);
 }
 
 function LinearScales() {
@@ -45,7 +73,7 @@ function LinearScales() {
     border_style = {border: "solid", borderWidth: 1, borderColor: "LightGrey"};
 
   return (<div>
-    <h1>Minimal working examples</h1>
+    <h1>Linear scales</h1>
     <h2>AxisTop</h2>
     <svg
       width={long_side}
