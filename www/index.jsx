@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, NavLink, Switch} from "react-router-dom";
-import { scaleLinear } from "d3-scale";
+import { scaleLinear, scaleLog } from "d3-scale";
 import { LinkContainer } from "react-router-bootstrap";
 import { AxisTop, AxisRight, AxisBottom, AxisLeft } from "../src/index.js";
 import Nav from "react-bootstrap/Nav";
@@ -96,8 +96,63 @@ function LinearScales() {
 }
 
 function LogScales() {
+  const long_side = 400,
+    short_side = 100,
+    padding = 50,
+    scale = scaleLog()
+      .domain([1, 10000])
+      .range([0, long_side-2*padding]),
+    border_style = {border: "solid", borderWidth: 1, borderColor: "LightGrey"};
+
   return (<div>
     <h1>Log scales</h1>
+    <h2>AxisTop</h2>
+    <svg
+      width={long_side}
+      height={short_side}
+      style={border_style}
+    >
+      <AxisTop
+        scale={scale}
+        transform={`translate(${padding}, ${short_side-padding})`}
+      />
+    </svg>
+
+    <h2>AxisBottom</h2>
+    <svg
+      width={long_side}
+      height={short_side}
+      style={border_style}
+    >
+      <AxisBottom
+        scale={scale}
+        transform={`translate(${padding}, ${padding})`}
+      />
+    </svg>
+
+    <h2>AxisLeft</h2>
+    <svg
+      width={short_side}
+      height={long_side}
+      style={border_style}
+    >
+      <AxisLeft
+        scale={scale}
+        transform={`translate(${padding}, ${padding})`}
+      />
+    </svg>
+
+    <h2>AxisRight</h2>
+    <svg
+      width={short_side}
+      height={long_side}
+      style={border_style}
+    >
+      <AxisRight
+        scale={scale}
+        transform={`translate(${padding}, ${padding})`}
+      />
+    </svg>
   </div>);
 }
 
