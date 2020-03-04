@@ -1,12 +1,12 @@
 {
   "name": "d3-react-axis",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A React axis component that tries to match D3's axis API",
   "main": "./d3-react-axis.js",
   "scripts": {
-    "test": "yarn build && npx jest",
-    "library": "npx babel --out-dir lib src/",
-    "yalc": "yarn library && cp package.json lib && cd lib && yalc push",
+    "test": "yarn library && npx jest",
+    "library": "npx babel --out-dir lib src/ && cp package.json lib",
+    "yalc": "yarn library && cd lib && yalc push",
     "develop": "npx webpack-dev-server --open"
   },
   "repository": {
