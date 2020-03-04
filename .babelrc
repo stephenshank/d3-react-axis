@@ -1,6 +1,7 @@
 {
   "plugins": [
-    "babel-plugin-convert-jsx-extension-to-js"
+    "babel-plugin-convert-jsx-extension-to-js",
+    "@babel/plugin-transform-modules-commonjs"
   ],
   "presets": [
     "@babel/preset-react"
